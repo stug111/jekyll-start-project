@@ -1,17 +1,17 @@
 const { task, series, parallel } = require('gulp');
 const server = require('browser-sync');
-const { buildSass, watchSass } = require('./tasks');
+const { buildSass, watchSass, buildJekyll, watchJekyll } = require('./tasks');
 const config = require('./paths');
 
 const main = series(
-    buildSass
+    parallel(buildJekyll, buildSass)
 )
 
 const serve = done => {
     server.init({
-        server: config.global.dest,
-        port: 4000,
-        open: false,
+        server: config.global.base,
+        port: 3000,
+        open: true,
         cors: true,
         ui: false
     });
@@ -24,9 +24,10 @@ const reload = done => {
 };
 
 const watch = () => {
-    watchSass(reload)
+    watchSass(reload);
+    watchJekyll(reload);
 };
 
-task('start', series(serve, watch));
+task('start', series(main, serve, watch));
 
 task('build', series(main));
