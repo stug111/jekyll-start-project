@@ -1,0 +1,11 @@
+{
+  "name": "jekyll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.config.js",
+  "scripts": {
+    "preinstall": "bundle install",
+  },
+  "author": "",
+  "license": "ISC"
+}
