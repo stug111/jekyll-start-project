@@ -2,3 +2,4 @@ source: src
 
 exclude:
   - sass
+  - js

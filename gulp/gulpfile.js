@@ -1,10 +1,10 @@
 const { task, series, parallel } = require('gulp');
 const server = require('browser-sync');
-const { buildSass, watchSass, buildJekyll, watchJekyll } = require('./tasks');
+const { buildSass, watchSass, buildJekyll, watchJekyll, watchJs, buildJs } = require('./tasks');
 const config = require('./paths');
 
 const main = series(
-    parallel(buildJekyll, buildSass)
+    parallel(buildJekyll, buildSass, buildJs)
 )
 
 const serve = done => {
@@ -25,6 +25,7 @@ const reload = done => {
 
 const watch = () => {
     watchSass(reload);
+    watchJs(reload);
     watchJekyll(reload);
 };
 
