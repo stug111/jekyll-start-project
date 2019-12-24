@@ -29,7 +29,15 @@
     "node-notifier": "^6.0.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.19.1",
     "webpack": "^4.41.4",
     "webpack-stream": "^5.2.1"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 100
   }
 }
