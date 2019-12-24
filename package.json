@@ -5,7 +5,14 @@
   "main": "build.config.js",
   "scripts": {
     "preinstall": "bundle install",
+    "start": "cd gulp && cross-env NODE_ENV=development gulp start",
+    "build": "cd gulp && cross-env NODE_ENV=production gulp build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "cross-env": "^6.0.3",
+    "gulp": "^4.0.2"
+  }
 }
