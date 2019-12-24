@@ -1,6 +1,11 @@
 const { task, series, parallel } = require('gulp');
 const server = require('browser-sync');
+const { buildSass, watchSass } = require('./tasks');
 const config = require('./paths');
+
+const main = series(
+    buildSass
+)
 
 const serve = done => {
     server.init({
@@ -13,6 +18,15 @@ const serve = done => {
     done();
 };
 
-task('start', series(serve));
+const reload = done => {
+    server.reload();
+    done();
+};
 
-task('build');
+const watch = () => {
+    watchSass(reload)
+};
+
+task('start', series(serve, watch));
+
+task('build', series(main));

@@ -1,10 +1,11 @@
 const src = "../src/";
-const dest = "../_site/";
+const base = "../_site/";
+const dest = "../src/assets/";
 
 module.exports = {
     global: {
         src,
-        dest
+        base
     },
     html: {
         src: `${src}`,
