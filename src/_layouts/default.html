@@ -11,8 +11,11 @@
     <title>{{ page.title }}</title>
   </head>
   <body>
-    {{ content }}
-
+    {% include header.html %}
+    <main>
+      {{ content }}
+    </main>
+    {% include footer.html %}
     <script src="./js/script.js"></script>
   </body>
 </html>
