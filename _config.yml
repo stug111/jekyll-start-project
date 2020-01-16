@@ -3,3 +3,7 @@ source: src
 exclude:
   - sass
   - js
+
+keep_files:
+  - css
+  - js
