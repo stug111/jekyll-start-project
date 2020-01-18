@@ -1,7 +1,7 @@
 const { series, watch, src } = require('gulp')
-const path = require('path')
 const cp = require('child_process')
 const paths = require('../paths')
+const path = require('path')
 
 const buildJekyll = () => {
   return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {
